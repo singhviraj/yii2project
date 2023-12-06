@@ -139,13 +139,45 @@ else{
      */
     public function actionDelete($id)
     {
-        $model = $this->findModel($id);
+  /*      $model = $this->findModel($id);
         
             if($model->access =='admin'){
             $this->findModel($id)->delete();
            }
         
         return $this->redirect(['index']);
+*/
+
+
+
+        $model = $this->findModel($id);
+
+        $model1 = new Compare;
+
+        $model1->load(\Yii::$app->request->post());
+        
+        if ($model1->validate()) {
+         if($model->email === $model1->username && $model->password === $model1->password){
+            if($model->access =='admin'){
+                $this->findModel($id)->delete();
+                return $this->redirect(['index']);
+                
+               }
+               if($model->access !='admin'){
+                
+                return $this->redirect(['index']);
+
+               }    
+                    }  
+          if($model->email !== $model1->username || $model->password !== $model1->password){
+            return $this->render('incorrect');
+
+          }           
+             }
+
+
+return $this->render('check', ['model1' => $model1]);
+
     }
 
     /**
