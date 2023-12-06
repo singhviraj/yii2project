@@ -14,16 +14,15 @@ $this->params['breadcrumbs'][] = 'Update';
 
 ?>
 
-
 <div class="users-update">
 
     <h1><?php 
- if($model->access == 'admin'  &&  $model->access == 'manager'){   
+ if($model->access == 'admin'  ||  $model->access == 'manager'){   
  echo Html::encode($this->title) ;} 
  ?></h1>
 
 <?php 
-if($model->access == 'admin' &&  $model->access == 'manager'){
+if($model->access == 'admin' ||  $model->access == 'manager'){
  echo $this->render('_form', [
         'model' => $model,
     ]) ;
