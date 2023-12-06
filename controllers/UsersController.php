@@ -23,31 +23,9 @@ class UsersController extends Controller
      */
     public function behaviors()
     {
-    /*   return array_merge(
-            parent::behaviors(),
-            [  
-                'verbs' => [
-                    'class' => VerbFilter::className(),
-                    'actions' => [
-                       'delete' => ['POST'],
-                   ],
-                ],
-            ]
-        );*/
+   
          return [
-   //         'access' => [
-     //           'class' => AccessControl::classname(),
-       //         'only' => ['view', 'update','delete'],
-       //         'rules' => [
-                
-                    // allow authenticated users
-         //           [
-           //             'allow' => ['view'],
-           //             'roles' => ['@'],
-             //       ],
-                    // everything else is denied
-        //        ],
-          //  ],
+   
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -92,7 +70,7 @@ class UsersController extends Controller
          return $this->render('view', ['model' => $model]);
           }  
           if($model->email !== $model1->username || $model->password !== $model1->password){
-            return $this->render('test1');
+            return $this->render('incorrect');
 
           }           
              }
@@ -100,11 +78,7 @@ else{
     return $this->render('check', ['model1' => $model1]);
 
 }
-
-
-       // return $this->render('view', [
-       // 'model' => $this->findModel($id),
-       // ]);
+       
     }
 
     /**
@@ -184,18 +158,5 @@ else{
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-   /* public function actionCheck(){
-
-        $model = new Compare;
-
-        $model->load(\Yii::$app->request->post());
-        
-        if ($model->validate()) {
-        
-          
-    }
-
-    return $this->render('check', ['model' => $model]);
-}
-*/
+   
 }

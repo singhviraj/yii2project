@@ -128,62 +128,6 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
-// i got error when I wrote small h in actionhello
 
-/*
-    public function actionHello(){
-        return $this->render('hello');
-    }
-
-    public function actionForm(){
-        $model = new Users;
-
-$model->load(\Yii::$app->request->post());
-
-if ($model->validate()) {
-    Yii::$app->session->setFlash('success','submitted successfully');
-      
-    if (($model = Users::find()->select('email, password')
-   ->where(['email' => 'testmail2698@gmail.com', 'password' => 'Viraj'])
-->one()) !== null)
-{
-
-
-    if($model->save()){
-        return $this->render('index');
-
-    }
-              
-    }
-  
-}
-        return $this->render('form',['model'=>$model]);
-        
-    }
-
-    public function actionPrint(){
-        $users = Users::find()->all();
-        return $this->render('showrecords',['users'=>$users]); 
-    }
-    public function actionSign(){
-        $model = new Users;
-
-$model->load(\Yii::$app->request->post());
-
-if ($model->validate()) {
-    Yii::$app->session->setFlash('success','submitted successfully');
-      
-   if (($model = Users::find()->select('email, password')
-    ->where(['email' => 'testmail2698@gmail.com', 'password' => 'Viraj'])
-->one()) !== null)
- {
     
-              
-    }
-  
-}
-        return $this->render('sign',['model'=>$model]);
-        
-    }
-   */
 }

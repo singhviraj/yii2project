@@ -9,8 +9,9 @@ $this->title = 'My Yii Application';
 use yii\helpers\Url;
 
 return Yii::$app->response->redirect(Url::to(['users/index']));
-
 ?>
+
+
 <div class="site-index">
 
     <div class="jumbotron text-center bg-transparent mt-5 mb-5">
