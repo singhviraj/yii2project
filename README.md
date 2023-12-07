@@ -1,5 +1,5 @@
 # yii2project (project is in master branch)
-3To select a branch kindly click on the top left button mentioning branch
+# To select a branch kindly click on the top left main button
 
 Client will be redirected from 
 http://localhost/project/basic/web/index.php to
